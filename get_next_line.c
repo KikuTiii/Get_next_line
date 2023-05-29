@@ -2,7 +2,7 @@
 
 char *memslice(char *newline, t_LIST *lst, char *line)
 {
-	line = lst_getslice(lst, 0, newline - lst->buffer);
+	line = lst_getslice(lst, 0, newline - lst->buffer + 1);
 	if (line == NULL)
 		return (NULL);
 	lst->len_buffer -= (newline + 1) - lst->buffer;
@@ -58,6 +58,8 @@ char *get_next_line(int fd)
 				return (NULL);
 		bytes = read(fd, lst->buffer + lst->len_buffer,
 					 lst->cap_buffer - lst->len_buffer);
+		if(bytes == -1)
+			return NULL;
 		if (bytes == 0)
 			return (lastmove(lst, NULL));
 		lst->len_buffer += bytes;
