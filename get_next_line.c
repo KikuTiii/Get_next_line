@@ -64,3 +64,38 @@ char *get_next_line(int fd)
 	}
 	return (NULL);
 }
+
+// int    main(void)
+// {
+//     int        fd;
+//     int        fd2;
+//     int        fd3;
+//     char    *line;
+//     int        index;
+
+//     index = 0;
+//     fd = open("Texto1.txt", O_RDONLY);
+//     fd2 = open("Texto2.txt", O_RDONLY);
+//     fd3 = open("Texto3.txt", O_RDONLY);
+//     while (index < 4)
+//     {
+//         line = get_next_line(fd);
+//         printf("%s\n", line);
+//         free(line);
+//         index++;
+//     }
+//     close(fd);
+//     while ((line = get_next_line(fd2)) != NULL)
+//     {
+//         printf("%s\n", line);
+//         free(line);
+//     }
+//     close(fd2);
+//     while ((line = get_next_line(fd3)) != NULL)
+//     {
+//         printf("%s\n", line);
+//         free(line);
+//     }
+//     close(fd3);
+//     return (0);
+// }
